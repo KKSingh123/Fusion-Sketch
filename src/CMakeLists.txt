@@ -3,4 +3,30 @@ project(TailoredSketch_Code)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(TailoredSketch_Code main.cpp Sketch.h CM_Sketch.h MurmurHash.h params.h CU_Sketch.h CountLess.h StingyC.h StingyCM.h StingyCM_Base.h StingyCM_Sample.h StingyCU.h StingyCU_Base.h Tailored.h O_Tailored.h Choose_Ske.h C_Sketch.h)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Sketch)
+
+set(SKETCH_HEADERS
+        Sketch/Sketch.h
+        Sketch/CM_Sketch.h
+        Sketch/CU_Sketch.h
+        Sketch/CountLess.h
+        Sketch/StingyC.h
+        Sketch/StingyCM.h
+        Sketch/StingyCM_Base.h
+        Sketch/StingyCM_Sample.h
+        Sketch/StingyCU.h
+        Sketch/StingyCU_Base.h
+        Sketch/Tailored.h
+        Sketch/O_Tailored.h
+        Sketch/C_Sketch.h
+        Sketch/KK_Sketch.h
+        Sketch/Stable_Sketch.h
+        Sketch/LightGuardian_Sketch.h
+        Sketch/Elastic_Sketch.h
+        Sketch/UnivMon_Sketch.h
+        Sketch/Nitro_Sketch.h
+        Sketch/SketchVisor.h)
+
+add_executable(TailoredSketch_Code main.cpp Choose_Ske.h MurmurHash.h params.h ${SKETCH_HEADERS})
+add_executable(KKSketch_Benchmark kk_benchmark.cpp Choose_Ske.h MurmurHash.h params.h ${SKETCH_HEADERS})

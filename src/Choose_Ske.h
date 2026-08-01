@@ -14,6 +14,14 @@
 #include "O_Tailored.h"
 #include "CountLess.h"
 #include "StingyCM_Sample.h"
+#include "KK_Sketch.h"
+#include "KK_Ablation_Sketches.h"
+#include "Stable_Sketch.h"
+#include "LightGuardian_Sketch.h"
+#include "Elastic_Sketch.h"
+#include "UnivMon_Sketch.h"
+#include "Nitro_Sketch.h"
+#include "SketchVisor.h"
 
 Sketch* Choose_Sketch(uint32_t w, uint32_t d, uint32_t hash_seed = 1000,int id=10){
     switch (id){
@@ -39,6 +47,15 @@ Sketch* Choose_Sketch(uint32_t w, uint32_t d, uint32_t hash_seed = 1000,int id=1
 
         case 50:return  new O_Tailored(w,d,hash_seed);
         case 51:return  new Tailored(w,d,hash_seed);
+        case 60:return  new KK_Sketch(w,d,hash_seed);
+        case 63:return  new CU_Only_Sketch(w,d,hash_seed);
+        case 64:return  new Residual_Only_Sketch(w,d,hash_seed);
+        case 61:return  new Stable_Sketch(w,d,hash_seed);
+        case 62:return  new LightGuardian_Sketch(w,d,hash_seed);
+        case 70:return  new Elastic_Sketch(w,d,hash_seed);
+        case 71:return  new UnivMon_Sketch(w,d,hash_seed);
+        case 72:return  new Nitro_Sketch(w,d,hash_seed);
+        case 73:return  new SketchVisor(w,d,hash_seed);
 
 
     }

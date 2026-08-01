@@ -1,0 +1,10 @@
+# Local editor settings
+.vscode/
+
+# Generated build and benchmark output
+build/
+results/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
